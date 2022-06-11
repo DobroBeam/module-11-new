@@ -11,7 +11,7 @@ using Telegram.Bot.Types.Enums;
 using Microsoft.Extensions.Hosting;
 
 
-namespace TelegramBot
+namespace UtilityBot
 {
     internal class Bot : BackgroundService
     {
@@ -44,7 +44,7 @@ namespace TelegramBot
             // Обрабатываем входящие сообщения из Telegram Bot API: https://core.telegram.org/bots/api#message
             if (update.Type == UpdateType.Message)
             {
-                await _telegramClient.SendTextMessageAsync(update.Message.Chat.Id, $"Вы отправили сообщение: {update.Message.Text}", cancellationToken: cancellationToken);
+                await _telegramClient.SendTextMessageAsync(update.Message.Chat.Id, $"Длина сообщения: {update.Message.Text.Length} знаков", cancellationToken: cancellationToken);
                 Console.WriteLine($"{DateTime.Now}: принято сообщение '{update.Message.Text}'");
                 return;
             }

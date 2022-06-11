@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
 
 
-namespace TelegramBot
+namespace UtilityBot
 {
     public class Program
     {
@@ -29,7 +29,7 @@ namespace TelegramBot
         static void ConfigureServices(IServiceCollection services)
         {
             // Регистрируем объект TelegramBotClient c токеном подключения
-            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("5343733012:AAFKKiRsYQYy3YX01eZcPGTMIr_Qqn2VSEY"));
+            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("5467909094:AAFuUfktfESuXeVOVGbCZRm-zK8OGschZ7E"));
             // Регистрируем постоянно активный сервис бота
             services.AddHostedService<Bot>();
         }
